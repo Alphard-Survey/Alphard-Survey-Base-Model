@@ -1,0 +1,47 @@
+
+    <!--Header-->
+    <%- include('../partials/header.ejs') %>
+
+    <!--Main Navigation-->
+    <%- include('../partials/navbar.ejs') %>
+
+    <!-- Main Content-->
+    <main class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-8">
+            <br>
+            <h1><%= title %></h1>
+            <br>
+            <a href="/survey-list/add" class="btn btn-primary" roll="button">
+              <i class="fas fa-plus-circle"></i> Add A Survey
+            </a>
+            <br>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+            <!--Header Row-->
+            <tr class="d-flex">
+                <th class="text-center col-8">Survey</th>
+                <th class="text-center col-2"></th>
+                <th class="text-center col-2"></th>
+            </tr>
+            <!--Repeatable Template Row-->
+            <% for(let count = 0; count<surveyList.length; count++) { %>
+                <tr class="d-flex">
+                    <td class="text-center col-8"><%=surveyList[count].SurveyName %></td>
+                    <td class="text-center col-2">
+                      <a href="/survey-list/edit/<%= surveyList[count]._id %>" class="btn btn-primary">
+                      <i class="fas fa-pencil-alt"></i>Update</a>
+                    </td>
+                    <td class="text-center col-2">
+                      <a href="/survey-list/delete/<%= surveyList[count]._id %>" class="btn btn-danger">
+                      <i class="fas fa-trash-alt"></i>Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+            </table>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+    <%- include('../partials/footer.ejs') %>

@@ -1,0 +1,54 @@
+    <!--Header-->
+    <%- include('../partials/header.ejs') %>
+
+    <!--Main Navigation-->
+    <%- include('../partials/navbar.ejs') %>
+
+    <!--Content For Add Page-->
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <br>
+                <h1><%= title %></h1>
+
+                <form class="form" method="POST">
+
+                    <div class="form-group">
+                        <label for="surveyNameTextFeild">Survey Name</label>
+                        <input type="text" class="form-control"
+                            id="surveyNameTextFeild"
+                            placeholder="Enter Survey Name"
+                            name="surveyName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q1TextFeild">Question 1</label>
+                        <input type="text" class="form-control"
+                            id="q1TextFeild"
+                            placeholder="Enter First Question"
+                            name="question1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="q2TextFeild">Question 2</label>
+                        <input type="text" class="form-control"
+                            id="q2TextFeild"
+                            placeholder="Enter Second Question"
+                            name="question2" required>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-edit"></i>Submit
+                    </button>
+
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i>Cancel</a>
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <%- include('../partials/footer.ejs') %>
