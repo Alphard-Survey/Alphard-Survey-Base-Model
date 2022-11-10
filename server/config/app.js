@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 //Modules For Authentication
 let session = require('express-session');
 let passport = require('passport');
@@ -61,7 +62,7 @@ app.use(passport.session());
 let userModel = require('../models/user');
 let User = userModel.User;
 
-//Impliment A User Authentication Strategy
+//Implement A User Authentication Strategy
 passport.use(User.createStrategy());
 
 //Serialize And Deserialize The User Infro
