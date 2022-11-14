@@ -1,0 +1,380 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<div class="container">
+    <div class="row">
+      <div class="offset-md-3 col-md-6">
+        <h1><%=title %></h1>
+  
+        <form class="form" method="post">
+  
+          <div class="from-group">
+            <label for="q1TextField">Question 1</label>
+            <p><%= survey.q1 %></p>
+          </div>
+
+          <div class="from-group">
+            <label for="a1TextField">Answer 1</label>
+            <br>
+            <% if (survey.type == "SA") { %>
+            <input
+            type="text"
+            class="form-control"
+            id="a1TextField"
+            placeholder="Answer 1"
+            name="a1"
+            required
+            />
+            <% } else if (survey.type == "TF")  { %>
+            <input
+            type="radio"
+            id="a1T"
+            name="a1"
+            value="T"
+            required
+            >
+            <label for="a1T">T</label>
+            <input
+            type="radio"
+            id="a1F"
+            name="a1"
+            value="F"
+            required
+            >
+            <label for="a1F">F</label>      
+            <% } else { %>
+              <input
+              type="radio"
+              id="a1SD"
+              name="a1"
+              value="Strongly Disagree"
+              required
+              >
+              <label for="a1SD">Strongly Disagree</label>
+              <input
+              type="radio"
+              id="a1D"
+              name="a1"
+              value="Disagree"
+              required
+              >
+              <label for="a1D">Disagree</label>  
+              <input
+              type="radio"
+              id="a1A"
+              name="a1"
+              value="Agree"
+              required
+              >
+              <label for="a1A">Agree</label>  
+              <input
+              type="radio"
+              id="a1SA"
+              name="a1"
+              value="Strongly Agree"
+              required
+              >
+              <label for="a1SA">Strongly Agree</label>  
+
+            <% } %>
+          </div>
+  
+          <div class="from-group">
+            <label for="q2TextField">Question 2</label>
+            <p><%= survey.q2 %></p>
+          </div>
+
+          <div class="from-group">
+            <label for="a2TextField">Answer 2</label>
+            <br>
+            <% if (survey.type == "SA") { %>
+            <input
+            type="text"
+            class="form-control"
+            id="a2TextField"
+            placeholder="Answer 2"
+            name="a2"
+            required
+            />
+            <% } else if (survey.type == "TF")  { %>
+            <input
+            type="radio"
+            id="a2T"
+            name="a2"
+            value="T"
+            required
+            >
+            <label for="a2T">T</label>
+            <input
+            type="radio"
+            id="a2F"
+            name="a2"
+            value="F"
+            required
+            >
+            <label for="a2F">F</label>      
+            <% } else { %>
+              <input
+              type="radio"
+              id="a2SD"
+              name="a2"
+              value="Strongly Disagree"
+              required
+              >
+              <label for="a1SD">Strongly Disagree</label>
+              <input
+              type="radio"
+              id="a2D"
+              name="a2"
+              value="Disagree"
+              required
+              >
+              <label for="a2D">Disagree</label>  
+              <input
+              type="radio"
+              id="a2A"
+              name="a2"
+              value="Agree"
+              required
+              >
+              <label for="a2A">Agree</label>  
+              <input
+              type="radio"
+              id="a2SA"
+              name="a2"
+              value="Strongly Agree"
+              required
+              >
+              <label for="a2SA">Strongly Agree</label>  
+
+            <% } %>
+          </div>
+
+
+          <div class="from-group">
+            <label for="q3TextField">Question 3</label>
+            <p><%= survey.q3 %></p>
+          </div>
+
+          <div class="from-group">
+            <label for="a3TextField">Answer 3</label>
+            <br>
+            <% if (survey.type == "SA") { %>
+            <input
+            type="text"
+            class="form-control"
+            id="a3TextField"
+            placeholder="Answer 3"
+            name="a3"
+            required
+            />
+            <% } else if (survey.type == "TF")  { %>
+            <input
+            type="radio"
+            id="a3T"
+            name="a3"
+            value="T"
+            required
+            >
+            <label for="a3T">T</label>
+            <input
+            type="radio"
+            id="a3F"
+            name="a3"
+            value="F"
+            required
+            >
+            <label for="a3F">F</label>      
+            <% } else { %>
+              <input
+              type="radio"
+              id="a3SD"
+              name="a3"
+              value="Strongly Disagree"
+              required
+              >
+              <label for="a3SD">Strongly Disagree</label>
+              <input
+              type="radio"
+              id="a3D"
+              name="a3"
+              value="Disagree"
+              required
+              >
+              <label for="a3D">Disagree</label>  
+              <input
+              type="radio"
+              id="a3A"
+              name="a3"
+              value="Agree"
+              required
+              >
+              <label for="a3A">Agree</label>  
+              <input
+              type="radio"
+              id="a3SA"
+              name="a3"
+              value="Strongly Agree"
+              required
+              >
+              <label for="a3SA">Strongly Agree</label>  
+
+            <% } %>
+          </div>
+
+
+          <div class="from-group">
+            <label for="q4TextField">Question 4</label>
+            <p><%= survey.q4 %></p>
+          </div>
+
+          <div class="from-group">
+            <label for="a4TextField">Answer 4</label>
+            <br>
+            <% if (survey.type == "SA") { %>
+            <input
+            type="text"
+            class="form-control"
+            id="a4TextField"
+            placeholder="Answer 4"
+            name="a4"
+            required
+            />
+            <% } else if (survey.type == "TF")  { %>
+            <input
+            type="radio"
+            id="a4T"
+            name="a4"
+            value="T"
+            required
+            >
+            <label for="a4T">T</label>
+            <input
+            type="radio"
+            id="a4F"
+            name="a4"
+            value="F"
+            required
+            >
+            <label for="a4F">F</label>      
+            <% } else { %>
+              <input
+              type="radio"
+              id="a4SD"
+              name="a4"
+              value="Strongly Disagree"
+              required
+              >
+              <label for="a4SD">Strongly Disagree</label>
+              <input
+              type="radio"
+              id="a4D"
+              name="a4"
+              value="Disagree"
+              required
+              >
+              <label for="a4D">Disagree</label>  
+              <input
+              type="radio"
+              id="a4A"
+              name="a4"
+              value="Agree"
+              required
+              >
+              <label for="a4A">Agree</label>  
+              <input
+              type="radio"
+              id="a4SA"
+              name="a4"
+              value="Strongly Agree"
+              required
+              >
+              <label for="a4SA">Strongly Agree</label>  
+
+            <% } %>
+          </div>
+
+          <div class="from-group">
+            <label for="q5TextField">Question 5</label>
+            <p><%= survey.q5 %></p>
+          </div>
+  
+          <div class="from-group">
+            <label for="a5TextField">Answer 5</label>
+            <br>
+            <% if (survey.type == "SA") { %>
+            <input
+            type="text"
+            class="form-control"
+            id="a5TextField"
+            placeholder="Answer 5"
+            name="a5"
+            required
+            />
+            <% } else if (survey.type == "TF")  { %>
+            <input
+            type="radio"
+            id="a5T"
+            name="a5"
+            value="T"
+            required
+            >
+            <label for="a5T">T</label>
+            <input
+            type="radio"
+            id="a5F"
+            name="a5"
+            value="F"
+            required
+            >
+            <label for="a5F">F</label>      
+            <% } else { %>
+              <input
+              type="radio"
+              id="a5SD"
+              name="a5"
+              value="Strongly Disagree"
+              required
+              >
+              <label for="a5SD">Strongly Disagree</label>
+              <input
+              type="radio"
+              id="a5D"
+              name="a5"
+              value="Disagree"
+              required
+              >
+              <label for="a5D">Disagree</label>  
+              <input
+              type="radio"
+              id="a5A"
+              name="a5"
+              value="Agree"
+              required
+              >
+              <label for="a5A">Agree</label>  
+              <input
+              type="radio"
+              id="a5SA"
+              name="a5"
+              value="Strongly Agree"
+              required
+              >
+              <label for="a5SA">Strongly Agree</label>  
+
+            <% } %>
+          </div>
+  
+          <button class="btn btn-primary" type="submit">
+            <i class="fas fa-edit"></i>Submit
+          </button>
+  
+          <a href="/survey-list" class="btn btn-warning">
+            <i class="fas fa-undo"></i>Cancel
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

@@ -1,54 +1,183 @@
-    <!--Header-->
-    <%- include('../partials/header.ejs') %>
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
 
-    <!--Main Navigation-->
-    <%- include('../partials/navbar.ejs') %>
+<!-- Content  for the add page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%=title %></h1>
 
-    <!--Content For Add Page-->
-    <div class="container">
-        <div class="row">
-            <div class="offset-md-3 col-md-6">
-                <br>
-                <h1><%= title %></h1>
-
-                <form class="form" method="POST">
-
-                    <div class="form-group">
-                        <label for="surveyNameTextFeild">Survey Name</label>
-                        <input type="text" class="form-control"
-                            id="surveyNameTextFeild"
-                            placeholder="Enter Survey Name"
-                            name="surveyName" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="q1TextFeild">Question 1</label>
-                        <input type="text" class="form-control"
-                            id="q1TextFeild"
-                            placeholder="Enter First Question"
-                            name="question1" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="q2TextFeild">Question 2</label>
-                        <input type="text" class="form-control"
-                            id="q2TextFeild"
-                            placeholder="Enter Second Question"
-                            name="question2" required>
-                    </div>
-                    <br>
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-edit"></i>Submit
-                    </button>
-
-                    <a href="/survey-list" class="btn btn-warning">
-                        <i class="fas fa-undo"></i>Cancel</a>
-
-                </form>
-                
-            </div>
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="nameTextField">Survey Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameTextField"
+            placeholder="Enter the Survey Title:"
+            name="name"
+            required
+          />
         </div>
-    </div>
 
-    <!--Footer-->
-    <%- include('../partials/footer.ejs') %>
+        <div class="from-group">
+          <label for="ownerTextField">Owner</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ownerTextField"
+            placeholder="Enter the Survey's Owner:"
+            name="owner"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="startDateTextField">Start Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startDateTextField"
+            placeholder=""
+            name="startDate"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="endDateTextField">End Date</label>
+          <input
+          type="date"
+          class="form-control"
+          id="endDateTextField"
+          placeholder=""
+          name="endDate"
+          required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="isActiveTextField">Active Status</label>
+          <br>
+          <input
+          type="radio"
+          id="isActiveDateTextField"
+          name="isActive"
+          value="Y"
+          required
+          />
+          <label for="isActiveDateTextField">Active</label>
+          <input
+          type="radio"
+          id="isInactiveDateTextField"
+          name="isActive"
+          value="N"
+          required
+          />
+          <label for="isInactiveDateTextField">Inactive</label>
+          
+        </div>
+
+        <div class="form-group">
+          <label for="option">Question Type</label>
+          <br>
+          <input
+          type="radio"
+          id="RA"
+          name="type"
+          value="RA"
+          required
+          >
+          <label for="Range">Range</label>
+  
+          <input
+          type="radio"
+          id="TF"
+          name="type"
+          value="TF"
+          required
+          >
+          <label for="TF">T/F</label>
+          <input
+          type="radio"
+          id="SA"
+          name="type"
+          value="SA"
+          required
+          >
+          <label for="SA">Short Answers</label>
+          
+        </div>
+
+        Questions
+
+        <div class="from-group">
+          <label for="q1TextField">Question 1</label>
+          <input
+          type="text"
+          class="form-control"
+          id="q1TextField"
+          placeholder="Question 1"
+          name="q1"
+          required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="q2TextField">Question 2</label>
+          <input
+          type="text"
+          class="form-control"
+          id="q2TextField"
+          placeholder="Question 2"
+          name="q2"
+          required
+          />
+        </div>
+        <div class="from-group">
+          <label for="q3TextField">Question 3</label>
+          <input
+          type="text"
+          class="form-control"
+          id="q3TextField"
+          placeholder="Question 3"
+          name="q3"
+          required
+          />
+        </div>
+        <div class="from-group">
+          <label for="q4TextField">Question 4</label>
+          <input
+          type="text"
+          class="form-control"
+          id="q4TextField"
+          placeholder="Question 4"
+          name="q4"
+          required
+          />
+        </div>
+        <div class="from-group">
+          <label for="q5TextField">Question 5</label>
+          <input
+          type="text"
+          class="form-control"
+          id="q5TextField"
+          placeholder="Question 5"
+          name="q5"
+          required
+          />
+        </div>
+
+<!--..-->
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+
+        <a href="/survey-list" class="btn btn-warning">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

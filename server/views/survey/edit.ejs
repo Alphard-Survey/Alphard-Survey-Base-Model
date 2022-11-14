@@ -1,83 +1,96 @@
-    <!--Header-->
-    <%- include('../partials/header.ejs') %>
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
 
-    <!--Main Navigation-->
-    <%- include('../partials/navbar.ejs') %>
+<!-- Content  for the add page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%=title %></h1>
 
-    <!--Content For Edit Page-->
-    <div class="container">
-        <div class="row">
-            <div class="offset-md-3 col-md-6">
-                <br>
-                <h1><%= title %></h1>
-
-                <form class="form" method="POST">
-
-                    <div class="form-group">
-                        <label for="surveyNameTextFeild">Survey Name</label>
-                        <input type="text" class="form-control"
-                            id="surveyNameTextFeild"
-                            placeholder="Enter Survey Name"
-                            name="surveyName" 
-                            value="<%= survey.SurveyName %>"
-                            required>
-                    </div>
-                    
-
-                    <div class="form-group">
-                        <label for="q1TextFeild">Question 1</label>
-                        <input type="text" class="form-control"
-                            id="q1TextFeild"
-                            placeholder="Enter Question 1"
-                            name="question1"
-                            value="<%= survey.Question1 %>" 
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="answer1TextFeild">Answer</label>
-                        <input type="text" class="form-control"
-                            id="answer1TextFeild"
-                            placeholder="Enter Answer"
-                            name="answer1"
-                            value="<%= survey.Answer1 %>" 
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="q2TextFeild">Question 2</label>
-                        <input type="text" class="form-control"
-                            id="q2TextFeild"
-                            placeholder="Enter Question 2"
-                            name="question2"
-                            value="<%= survey.Question2 %>" 
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="answer2TextFeild">Answer</label>
-                        <input type="text" class="form-control"
-                            id="answer2TextFeild"
-                            placeholder="Enter Answer"
-                            name="answer2"
-                            value="<%= survey.Answer2 %>" 
-                            required>
-                    </div>
-
-                    <br>
-
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-edit"></i>Submit
-                    </button>
-
-                    <a href="/survey-list" class="btn btn-warning">
-                        <i class="fas fa-undo"></i>Cancel</a>
-
-                </form>
-                
-            </div>
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="surveyTextField">Survey Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="surveyTextField"
+            placeholder="Enter the Survey Title:"
+            name="name"
+            value="<%= survey.name %>"
+            required
+          />
         </div>
-    </div>
 
-    <!--Footer-->
-    <%- include('../partials/footer.ejs') %>
+        <div class="from-group">
+          <label for="ownerTextField">Owner</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ownerTextField"
+            placeholder="Enter the Survey's Owner:"
+            name="owner"
+            value="<%= survey.owner %>"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="startDateTextField">Start Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startDateTextField"
+            placeholder="Enter the Start Date:"
+            name="startDate"
+            value="<%= survey.startDate %>"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="endDateTextField">End Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="endDateTextField"
+            placeholder="Enter the End Date:"
+            name="endDate"
+            value="<%= survey.endDate %>"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="isActiveTextField">Active Status</label>
+          <br>
+          <input
+          type="radio"
+          id="isActiveDateTextField"
+          name="isActive"
+          checked
+          value="Y"
+          required
+          />
+          <label for="isActiveDateTextField">Active</label>
+          <input
+          type="radio"
+          id="isInactiveDateTextField"
+          name="isActive"
+          value="N"
+          required
+          />
+          <label for="isInactiveDateTextField">Inactive</label>
+          
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+
+        <a href="/survey-list" class="btn btn-warning">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

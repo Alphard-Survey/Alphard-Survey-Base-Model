@@ -8,118 +8,178 @@ Ryan Arafeh – 301239052
 Zack Havers – 301202845 
 */
 
-let express = require('express');
+let express = require("express");
 let router = express.Router();
-let mongoose = require('mongoose');
-const survey = require('../models/survey');
+let mongoose = require("mongoose");
 
-//Connect to survey Model
-let Survey = require('../models/survey');
+//create reference to the model (dbschema)
+let Survey = require("../models/survey");
 
-module.exports.displaysurveyList = (req, res, next) => {
-    Survey.find((err, surveyList) => {
-        if(err)
-        {
-            return console.error(err);
-        }
-        else
-        {
-            //console.log(surveyList);
+module.exports.displaySurveyList = (req, res, next) => {
+  Survey.find((err, surveyList) => {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.render("survey/list", {
+        title: "Survey",
+        SurveyList: surveyList,
+        displayName: req.user ? req.user.displayName : "", 
+      });
+      //render survey and pass title and Booklist variable we are passing bookList object to BookList property
+    }
+  });
+};
 
-            res.render('survey/list', 
-            {title: 'Surveys', 
-            surveyList: surveyList, 
-            displayName: req.user ? req.user.displayName : ''});      
-        }
-    });
+module.exports.addpage = (req, res, next) => {
+  res.render("survey/add", {
+    title: "Add Survey",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
+module.exports.addprocesspage = (req, res, next) => {
+  let newSurvey = Survey({
+    name: req.body.name,
+    owner: req.body.owner,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    isActive: req.body.isActive,
+    type: req.body.type,
+    q1: req.body.q1,
+    q2: req.body.q2,
+    q3: req.body.q3,
+    q4: req.body.q4,
+    q5: req.body.q5,
+  });
+  Survey.create(newSurvey, (err, Survey) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      // refresh the survey list
+      res.redirect("/survey-list");
+    }
+  });
+};
+
+module.exports.displayeditpage = (req, res, next) => {
+  let id = req.params.id; //id of actual object
+
+  Survey.findById(id, (err, surveytoedit) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //show the edit view
+      res.render("survey/edit", {
+        title: "Edit Survey",
+        survey: surveytoedit,
+        displayName: req.user ? req.user.displayName : "",
+      });
+    }
+  });
+};
+
+module.exports.processingeditpage = (req, res, next) => {
+  let id = req.params.id; //id of actual object
+
+  let updatesurvey = Survey({
+    _id: id,
+    name: req.body.name,
+    owner: req.body.owner,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    isActive: req.body.isActive,
+    q1: req.body.q1,
+    q2: req.body.q2,
+    q3: req.body.q3,
+    q4: req.body.q4,
+    q5: req.body.q5,
+  });
+  Survey.updateOne({ _id: id }, updatesurvey, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //refresh the survey list
+      res.redirect("/survey-list");
+    }
+  });
+};
+
+module.exports.deletepage = (req, res, next) => {
+  let id = req.params.id;
+  Survey.remove({ _id: id }, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //refresh survey list
+      res.redirect("/survey-list");
+    }
+  });
+};
+
+module.exports.displayanswerpage = (req, res, next) => {
+  let id = req.params.id; //id of actual object
+
+  Survey.findById(id, (err, surveytoanswer) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.render("survey/answer", {
+        title: "Answer Survey",
+        survey: surveytoanswer,
+        displayName: req.user ? req.user.displayName : "",
+      });
+    }
+      //show the answer view
+  });
+};
+
+module.exports.processinganswerpage = (req, res, next) => {
+  let id = req.params.id; //id of actual object
+
+  let answersurvey = Survey({
+    _id: id,
+    q1: req.body.q1,
+    q2: req.body.q2,
+    q3: req.body.q3,
+    q4: req.body.q4,
+    q5: req.body.q5,
+    a1: req.body.a1,
+    a2: req.body.a2,
+    a3: req.body.a3,
+    a4: req.body.a4,
+    a5: req.body.a5,
+  });
+  Survey.updateOne({ _id: id }, answersurvey, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //refresh the survey list
+      res.redirect("/survey-list");
+    }
+  });
+};
+
+module.exports.displayresponsepage = (req, res, next) => {
+  let id = req.params.id;
+  Survey.findById(id, (err, surveytoresponse) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //show the response view
+      res.render("survey/response", {
+        title: "Survey Response",
+        survey: surveytoresponse,
+        displayName: req.user ? req.user.displayName : "",
+      });
+    }
+  });
+
 }
 
-module.exports.displayAddPage = (req, res, next) => {
-    res.render('survey/add', {title: 'Add survey', 
-    displayName: req.user ? req.user.displayName : ''})          
-}
-
-module.exports.processAddPage = (req, res, next) => {
-    let newsurvey = survey({
-        "SurveyName": req.body.surveyName,
-        "Question1": req.body.question1,
-        "Answer1": req.body.answer1,
-        "Question2": req.body.question2,
-        "Answer2": req.body.answer2
-    });
-
-    Survey.create(newsurvey, (err, survey) =>{
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            // refresh the survey list
-            res.redirect('/survey-list');
-        }
-    });
-
-}
-
-module.exports.displayEditPage = (req, res, next) => {
-    let id = req.params.id;
-
-    survey.findById(id, (err, surveyToEdit) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            console.log(surveyToEdit);
-            res.render('survey/edit', {title: 'Complete Survey', survey: surveyToEdit, 
-            displayName: req.user ? req.user.displayName : ''})
-        }
-    });
-}
-
-module.exports.processEditPage = (req, res, next) => {
-    let id = req.params.id
-
-    let updatedsurvey = survey({
-        "_id": id,
-        "SurveyName": req.body.surveyName,
-        "Question1": req.body.question1,
-        "Answer1": req.body.answer1,
-        "Question2": req.body.question2,
-        "Answer2": req.body.answer2
-    });
-
-    survey.updateOne({_id: id}, updatedsurvey, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-            // refresh the survey list
-            res.redirect('/survey-list');
-        }
-    });
-}
-
-module.exports.performDelete = (req, res, next) => {
-    let id = req.params.id;
-
-    survey.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else
-        {
-             // refresh the survey list
-             res.redirect('/survey-list');
-        }
-    });
-}

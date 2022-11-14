@@ -8,36 +8,36 @@ Ryan Arafeh – 301239052
 Zack Havers – 301202845 
 */
 
-var express = require('express');
-var router = express.Router();
+let express = require("express");
+let router = express.Router();
 
-let indexController = require('../controllers/index');
-
-/* GET home page. */
-router.get('/', indexController.displayHomePage);
+let indexController = require("../controllers/index");
 
 /* GET home page. */
-router.get('/home', indexController.displayHomePage);
+router.get("/", indexController.displayHomepage);
+
+/* GET home page. */
+router.get("/home", indexController.displayHomepage);
 
 /* GET About Us page. */
-router.get('/about', indexController.displayAboutPage);
+router.get("/about", indexController.displayaboutpage);
 
-/* GET Services page. */
-router.get('/surveys', indexController.displaySurveysPage);
+/* GET Contact Us page. */
+router.get("/contact", indexController.displayContactpage);
 
-/*GET Route for Displaying The Login Page*/
-router.get('/login', indexController.displayLoginPage);
+/* GET Route for displaying the Login page */
+router.get("/login", indexController.displayLoginPage);
 
-/*POST Route For Processing The Login Page*/
-router.post('/login', indexController.processLoginPage);
+/* POST Route for processing the Login page */
+router.post("/login", indexController.processLoginPage);
 
-/*GET Route for Displaying The Register Page*/
-router.get('/register', indexController.displayRegisterPage);
+/* GET Route for displaying the Register page */
+router.get("/register", indexController.displayRegisterPage);
 
-/*POST Route For Processing The Register Page*/
-router.post('/register', indexController.processRegisterPage);
+/* POST Route for processing the Register page */
+router.post("/register", indexController.processRegisterPage);
 
-/*GET To Perform logout*/
-router.get('/logout', indexController.performLogout);
+/* GET to perform UserLogout */
+router.get("/logout", indexController.performLogout);
 
 module.exports = router;

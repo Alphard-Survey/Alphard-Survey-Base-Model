@@ -1,0 +1,73 @@
+Use the part @ program passport
+here we add navigation login and logout also logged in username info
+
+1. controllers-->index.js
+in displayHomepage add one more proprety displayName
+if user exist then diplay name or nothing
+
+module.exports.displayHomepage = (req, res, next) => {
+  res.render("index", { title: "Home",   displayName: req.user ? req.user.displayName : "", });
+};
+
+add diplayname in about , service, product and contactus page.
+
+2. now to view go to main_nav.ejs add conditional login its only pop up when user logged in and logged out
+
+<% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <% } %>
+
+
+3. goto routes-->book.js
+controllers--> book.js does not have user access
+now modify controllers--> book.js displayBookList
+
+res.render("book/list", {
+        title: "Books",
+        BookList: bookList,
+        displayName: req.user ? req.user.displayName : "",
+      });
+
+also modify bookEdit
+displayaddpage
+
+module.exports.addpage = (req, res, next) => {
+  res.render("book/add", {
+    title: "Add Book",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
+4. to provide condition that only logged in user can access
+goto views-->book-->list.ejs copy following code after h1
+ <% if(typeof displayName == 'string' && displayName) { %>
+
+      <a href="/book-list/add" class="btn btn-primary" role="button">
+      <i class ="fas fa-plus-circle"></i> Add a book
+   <%}%>
+
+if user exists then we have add button
+in same file apply for columns
+<% if(typeof displayName == 'string' && displayName) { %>
+
+          <th class="text-center"></th>
+          <th class="text-center"></th>
+          <%}%>
+
+and same for button
+
+ <% if(typeof displayName == 'string' && displayName) { %>
+            <td class="text-center col-1">
+              <a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+              <i class="fas fa-pencil-alt"></i> Edit</a>
+          </td>
+          <td class="text-center col-1">
+              <a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+              <i class="fas fa-trash-alt"></i> Delete</a>
+          </td>
+          <%}%>

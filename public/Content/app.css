@@ -1,0 +1,22 @@
+/* custom css goes here */
+body {
+    padding-bottom: 100px;
+}
+
+.role-header {
+    text-align: left;
+}
+
+.role-tr {
+    text-align: center;
+}
+.role-th {
+    border: 1px solid black;
+    background-color: #4287f5;
+    color:white;
+}
+.role-td {
+  width: 150px;
+  border: 1px solid black;
+  padding: 5px;
+}        

@@ -1,28 +1,28 @@
 #!/usr/bin/env node
 
-/* Members (Name - Student ID)
+/**
+ * Module dependencies.
+ */
+
+/*
+Members (Name - Student ID)
 David Pietrocola –301247544 
 Jacob Todasco – 301251200 
 Jungyu Lee – 301236221 
 Menal Humeda – 301160220 
 Ryan Arafeh – 301239052 
-Zack Havers – 301202845  */
-
-/**
- * Module dependencies.
- */
+Zack Havers – 301202845 
+*/
 
 var app = require("./server/config/app");
-var debug = require("debug")("assignment-2:server");
+var debug = require("debug")("week-4:server");
 var http = require("http");
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || "3000");
-
-//? We are creating a "variable" that we can access using app.get('port') https://stackoverflow.com/questions/25337222/javascript-app-setport-8080-versus-app-listen8080-in-express-js
+var port = normalizePort(process.env.PORT || "4500");
 app.set("port", port);
 
 /**

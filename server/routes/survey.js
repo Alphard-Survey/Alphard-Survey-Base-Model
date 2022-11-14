@@ -8,38 +8,55 @@ Ryan Arafeh – 301239052
 Zack Havers – 301202845 
 */
 
-let express = require('express');
+let express = require("express");
 let router = express.Router();
-let mongoose = require('mongoose');
-let passport = require('passport');
-let surveyController = require('../controllers/survey');
+let mongoose = require("mongoose");
+let passport = require("passport");
 
-function requireAuth(req, res, next)
-{
-    // check if the user is logged in
-    if(!req.isAuthenticated())
-    {
-        return res.redirect('/login');
-    }
-    next();
+// connect to our Book Model
+//let Book = require("../models/book");
+
+let surveyController = require("../controllers/survey");
+
+// helper function for guard purposes
+function requireAuth(req, res, next) {
+  // check if the user is logged in
+  if (!req.isAuthenticated()) {
+    return res.redirect("/login");
+  }
+  next();
 }
 
-/* GET Route for the survey List page - READ Operation */
-router.get('/', requireAuth, surveyController.displaysurveyList);
+/* GET Route for the Book List page - READ Operation */
+router.get("/", surveyController.displaySurveyList);
 
 /* GET Route for displaying the Add page - CREATE Operation */
-router.get('/add', requireAuth, surveyController.displayAddPage);
+// router.get("/add", requireAuth, surveyController.addpage);
+router.get("/add", surveyController.addpage);
 
 /* POST Route for processing the Add page - CREATE Operation */
-router.post('/add', requireAuth, surveyController.processAddPage);
+// router.post("/add", requireAuth, surveyController.addprocesspage);
+router.post("/add", surveyController.addprocesspage);
 
 /* GET Route for displaying the Edit page - UPDATE Operation */
-router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
+//router.get("/edit/:id", requireAuth, surveyController.displayeditpage);
+router.get("/edit/:id", surveyController.displayeditpage);
 
 /* POST Route for processing the Edit page - UPDATE Operation */
-router.post('/edit/:id', requireAuth, surveyController.processEditPage);
+//router.post("/edit/:id", requireAuth, surveyController.processingeditpage);
+router.post("/edit/:id", surveyController.processingeditpage);
 
 /* GET to perform  Deletion - DELETE Operation */
-router.get('/delete/:id', requireAuth, surveyController.performDelete);
+//router.get("/delete/:id", requireAuth, surveyController.deletepage);
+router.get("/delete/:id", surveyController.deletepage);
+
+/* GET Route for displaying the Answer page - READ Operation */
+router.get("/answer/:id", surveyController.displayanswerpage);
+
+/* POST Route for processing the Answer page - UPDATE Operation */
+router.post("/answer/:id", surveyController.processinganswerpage);
+
+/* GET Route for displaying the Response page - READ Operation */
+router.get("/response/:id", surveyController.displayresponsepage);
 
 module.exports = router;

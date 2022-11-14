@@ -7,21 +7,37 @@ Menal Humeda – 301160220
 Ryan Arafeh – 301239052 
 Zack Havers – 301202845 
 */
-let mongoose = require('mongoose');
+
 let express = require("express");
 let router = express.Router();
+let mongoose = require("mongoose");
+const { stringify } = require("querystring");
 
-//Create Model Class
+//create a model class
 let surveyModel = mongoose.Schema(
-{
-    SurveyName: String,
-    Question1: String,
-    Answer1: String,
-    Question2: String,
-    Answer2: String,
-},
-{
-    collection: "Survey"
-});
+  {
+    name: String,
+    owner: String,
+    startDate: String,
+    endDate: String,
+    isActive:String,
+    type: String,
+    q1: String,
+    q2: String,
+    q3: String,
+    q4: String,
+    q5: String,  
+    a1: String,
+    a2: String,
+    a3: String,
+    a4: String,
+    a5: String,  
+  },
 
-module.exports = mongoose.model('Survey', surveyModel);
+  {
+    collection: "survey",
+  }
+);
+
+//booksmodel to create new book more powerful than just class
+module.exports = mongoose.model("Survey", surveyModel);

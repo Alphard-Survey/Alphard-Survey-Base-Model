@@ -8,8 +8,9 @@ Ryan Arafeh – 301239052
 Zack Havers – 301202845 
 */
 
-require("dotenv").config();
-module.exports = 
-{
-    "URI": process.env.MONGO_URI
-}
+module.exports = {
+  //URI: "mongodb://127.0.0.1:27017/book_store",
+  URI: "mongodb+srv://won:lfhHZrBy1Ik8guZj@mongodbserver.yfom0su.mongodb.net/survey_list?retryWrites=true&w=majority",
+  //URI: "mongodb+srv://Won:V326dxdgQAXCreUp@clusterteamproject.tkazmzk.mongodb.net/survey_list?retryWrites=true&w=majority",
+  Secret: "SomeSecret",
+};
