@@ -1,14 +1,16 @@
-<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+<%- include ../partials/header.ejs %> 
+<%- include ../partials/main_nav.ejs %>
 
 <div class="container">
     <div class="row">
       <div class="offset-md-3 col-md-6">
+        <br>
         <h1><%=title %></h1>
-  
-        <form class="form" method="post">
+        <br>
+        <form class="form" method="post" id="answerForm">
   
           <div class="from-group">
-            <label for="q1TextField">Question 1</label>
+            <label id="qtl" for="q1TextField">Question 1</label>
             <p><%= survey.q1 %></p>
           </div>
 
@@ -79,7 +81,7 @@
           </div>
   
           <div class="from-group">
-            <label for="q2TextField">Question 2</label>
+            <label id="qtl" for="q2TextField">Question 2</label>
             <p><%= survey.q2 %></p>
           </div>
 
@@ -151,7 +153,7 @@
 
 
           <div class="from-group">
-            <label for="q3TextField">Question 3</label>
+            <label id="qtl" for="q3TextField">Question 3</label>
             <p><%= survey.q3 %></p>
           </div>
 
@@ -223,7 +225,7 @@
 
 
           <div class="from-group">
-            <label for="q4TextField">Question 4</label>
+            <label id="qtl" for="q4TextField">Question 4</label>
             <p><%= survey.q4 %></p>
           </div>
 
@@ -294,7 +296,7 @@
           </div>
 
           <div class="from-group">
-            <label for="q5TextField">Question 5</label>
+            <label id="qtl" for="q5TextField">Question 5</label>
             <p><%= survey.q5 %></p>
           </div>
   
@@ -368,7 +370,7 @@
             <i class="fas fa-edit"></i>Submit
           </button>
   
-          <a href="/survey-list" class="btn btn-warning">
+          <button class="btn btn-warning" a href="/survey-list" >
             <i class="fas fa-undo"></i>Cancel
           </a>
         </form>
