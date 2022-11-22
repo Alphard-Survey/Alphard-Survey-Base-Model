@@ -1,11 +1,12 @@
 <%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
 
-<!-- Content  for the add page -->
+<!-- Content  for the edit page -->
 <div class="container">
   <div class="row">
     <div class="offset-md-3 col-md-6">
+      <br>
       <h1><%=title %></h1>
-
+      <br>
       <form class="form" method="post">
         <div class="from-group">
           <label for="surveyTextField">Survey Title</label>
@@ -19,7 +20,7 @@
             required
           />
         </div>
-
+        <br>
         <div class="from-group">
           <label for="ownerTextField">Owner</label>
           <input
@@ -32,7 +33,7 @@
             required
           />
         </div>
-
+        <br>
         <div class="from-group">
           <label for="startDateTextField">Start Date</label>
           <input
@@ -45,7 +46,7 @@
             required
           />
         </div>
-
+        <br>
         <div class="from-group">
           <label for="endDateTextField">End Date</label>
           <input
@@ -58,7 +59,7 @@
             required
           />
         </div>
-
+        <br>
         <div class="from-group">
           <label for="isActiveTextField">Active Status</label>
           <br>
@@ -84,13 +85,11 @@
           required
           />
           <label for="isInactiveDateTextField">Inactive</label>
-          
         </div>
-
+        <br>
         <button class="btn btn-primary" type="submit">
           <i class="fas fa-edit"></i>Submit
         </button>
-
         <a href="/survey-list" class="btn btn-warning">
           <i class="fas fa-undo"></i>Cancel
         </a>
