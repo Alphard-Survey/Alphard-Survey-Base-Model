@@ -9,7 +9,7 @@ Zack Havers – 301202845
 */
 require("dotenv").config();
 module.exports = {
-  //URI: process.env.MONGO_URI,
-  URI: "mongodb+srv://won:NA9fKqXE1DbjdStS@clusterteamproject.tkazmzk.mongodb.net/survey_list?retryWrites=true&w=majority",
+  URI: process.env.MONGO_URI,
+  //URI: "mongodb+srv://won:NA9fKqXE1DbjdStS@clusterteamproject.tkazmzk.mongodb.net/survey_list?retryWrites=true&w=majority",
   Secret: "SomeSecret",
 };
