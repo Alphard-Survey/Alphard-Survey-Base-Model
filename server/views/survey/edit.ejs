@@ -66,7 +66,9 @@
           type="radio"
           id="isActiveDateTextField"
           name="isActive"
-          checked
+          <%if(survey.isActive=="Y"){%>
+            <%="checked"%>
+          <%}%>
           value="Y"
           required
           />
@@ -75,6 +77,9 @@
           type="radio"
           id="isInactiveDateTextField"
           name="isActive"
+          <%if(survey.isActive=="N"){%>
+            <%="checked"%>
+          <%}%>
           value="N"
           required
           />
