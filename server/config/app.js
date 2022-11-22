@@ -14,6 +14,7 @@ let express = require("express");
 let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
+require("dotenv").config();
 
 //modules for authentication
 let session = require("express-session");
@@ -24,10 +25,10 @@ let flash = require("connect-flash");
 
 //database_setup
 let mongoose = require("mongoose");
-let DB = require("./db");
+let DB = require("./db"); //Instead of using the db.js I used a direct link to the database
 
 //point mongoose to the DB URI
-mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let mongodb = mongoose.connection;
 mongodb.on("error", console.error.bind(console, "connection error:"));
