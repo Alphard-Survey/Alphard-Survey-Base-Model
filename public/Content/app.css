@@ -22,9 +22,11 @@ body {
 }        
 
 #answerForm {
+    margin-top: 10px;
     border-style: solid;
-    padding: 5%;
     border-radius: 10px;
+    padding-bottom: 20px;
+    width: 80%;
 }
 
 #answerForm p, label, input {
@@ -32,8 +34,16 @@ body {
     margin-bottom: 10px;
 }
 
+
 #qtl {
     background-color: lightgrey;
+    width: 100%;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+#ans {
+    background-color: lightgreen;
     width: 100%;
     padding-left: 5px;
     border-radius: 10px;
@@ -46,4 +56,33 @@ body {
 .jumbotron {
     margin-top: 20px;
     box-shadow: 10px 10px lightgreen;
+}
+
+#editBox label {
+    background-color: lightgrey;
+    width: 100%;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-shadow: 2px 2px lightgreen;
+}
+
+#editBox {
+    margin-top: 10px;
+    border-style: solid;
+    padding-bottom: 20px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+#btn1 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#responseForm{
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
 }

@@ -1,13 +1,13 @@
 <%- include ../partials/header.ejs %> 
 <%- include ../partials/main_nav.ejs %>
 
-<div class="container">
+<div class="container" id="answerForm">
     <div class="row">
       <div class="offset-md-3 col-md-6">
         <br>
         <h1><%=title %></h1>
         <br>
-        <form class="form" method="post" id="answerForm">
+        <form class="form" method="post">
   
           <div class="from-group">
             <label id="qtl" for="q1TextField">Question 1</label>
@@ -15,7 +15,7 @@
           </div>
 
           <div class="from-group">
-            <label for="a1TextField">Answer 1</label>
+            <label id="ans" for="a1TextField">Answer 1</label>
             <br>
             <% if (survey.type == "SA") { %>
             <input
@@ -86,7 +86,7 @@
           </div>
 
           <div class="from-group">
-            <label for="a2TextField">Answer 2</label>
+            <label id="ans" for="a2TextField">Answer 2</label>
             <br>
             <% if (survey.type == "SA") { %>
             <input
@@ -158,7 +158,7 @@
           </div>
 
           <div class="from-group">
-            <label for="a3TextField">Answer 3</label>
+            <label id="ans" for="a3TextField">Answer 3</label>
             <br>
             <% if (survey.type == "SA") { %>
             <input
@@ -230,7 +230,7 @@
           </div>
 
           <div class="from-group">
-            <label for="a4TextField">Answer 4</label>
+            <label id="ans" for="a4TextField">Answer 4</label>
             <br>
             <% if (survey.type == "SA") { %>
             <input
@@ -301,7 +301,7 @@
           </div>
   
           <div class="from-group">
-            <label for="a5TextField">Answer 5</label>
+            <label id="ans" for="a5TextField">Answer 5</label>
             <br>
             <% if (survey.type == "SA") { %>
             <input
@@ -366,11 +366,11 @@
             <% } %>
           </div>
   
-          <button class="btn btn-primary" type="submit">
+          <button class="btn btn-primary" type="submit" id="btn1" >
             <i class="fas fa-edit"></i>Submit
           </button>
   
-          <button class="btn btn-warning" a href="/survey-list" >
+          <button class="btn btn-warning" a href="/survey-list" id="btn1" >
             <i class="fas fa-undo"></i>Cancel
           </a>
         </form>

@@ -2,13 +2,13 @@
 
 <div class="container">
     <div class="row">
-      <div class="offset-md-3 col-md-6">
+      <div class="offset-md-3 col-md-6" id="responseForm">
         <h1><%=title %></h1>
   
         <form class="form" method="post">
   
           <div class="from-group">
-            <label for="q1TextField">Question 1</label>
+            <label id="qt1" for="q1TextField">Question 1</label>
             <p><%= survey.q1 %></p>
 
           </div>
@@ -18,7 +18,7 @@
           </div>
   
           <div class="from-group">
-            <label for="q2TextField">Question 2</label>
+            <label id="qt1" for="q2TextField">Question 2</label>
             <p><%= survey.q2 %></p>
           </div>
 
@@ -28,7 +28,7 @@
           </div>
 
           <div class="from-group">
-            <label for="q3TextField">Question 3</label>
+            <label id="qt1" for="q3TextField">Question 3</label>
             <p><%= survey.q3 %></p>
           </div>
 
@@ -38,7 +38,7 @@
           </div>
 
           <div class="from-group">
-            <label for="q4TextField">Question 4</label>
+            <label id="qt1" for="q4TextField">Question 4</label>
             <p><%= survey.q4 %></p>
           </div>
 
@@ -48,7 +48,7 @@
           </div>
 
           <div class="from-group">
-            <label for="q5TextField">Question 5</label>
+            <label id="qt1" for="q5TextField">Question 5</label>
             <p><%= survey.q5 %></p>
           </div>
   
@@ -57,7 +57,7 @@
             <p><%= survey.a5 %></p>
           </div>
     
-          <a href="/survey-list" class="btn btn-warning">
+          <a href="/survey-list" class="btn btn-warning" id="btn1">
             <i class="fas fa-undo"></i>Back
           </a>
         </form>
