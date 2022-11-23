@@ -42,3 +42,8 @@ body {
 #answerForm  button {
     margin-top: 10px;
 }
+
+.jumbotron {
+    margin-top: 20px;
+    box-shadow: 10px 10px lightgreen;
+}
