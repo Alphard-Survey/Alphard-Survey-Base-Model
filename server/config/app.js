@@ -16,6 +16,12 @@ let cookieParser = require("cookie-parser");
 let logger = require("morgan");
 require("dotenv").config();
 
+// extra security packages
+const helmet = require("helmet");
+const cors = require("cors");
+const xss = require("xss-clean");
+const rateLimit = require("express-rate-limit");
+
 //modules for authentication
 let session = require("express-session");
 let passport = require("passport");
@@ -46,6 +52,17 @@ let app = express();
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs"); // express  -e
 
+// Set the limit of requests
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMsd
+  })
+);
+
+app.use(helmet());
+app.use(cors());
+app.use(xss());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
