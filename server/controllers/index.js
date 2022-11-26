@@ -33,7 +33,7 @@ module.exports.displayaboutpage = (req, res, next) => {
 
 
 module.exports.displayContactpage = (req, res, next) => {
-  res.render("index", {
+  res.render("contact", {
     title: "Contact",
     displayName: req.user ? req.user.displayName : "",
   });

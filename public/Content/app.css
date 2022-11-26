@@ -96,3 +96,48 @@ body {
     margin-right: auto;
     width: 50%;
 }
+
+
+#container
+{
+    
+    text-align: center;
+}
+.contact
+{
+    padding-top: 50px;
+    font-size: 4em;
+    opacity: 0.5;
+}
+.input
+{
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+.subject
+{
+    border-radius: 20px;
+    width: 400px;
+    height: 35px;
+    padding: 10px;
+    
+
+}
+.comment
+{
+    border-radius: 20px;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+  
+    
+    
+
+}
+.headfour
+{
+    padding-top: 60px;
+}
+
