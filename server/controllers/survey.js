@@ -21,7 +21,7 @@ module.exports.displaySurveyList = (req, res, next) => {
       return console.error(err);
     } else {
       res.render("survey/list", {
-        title: "Survey",
+        title: "Surveys",
         SurveyList: surveyList,
         displayName: req.user ? req.user.displayName : "", 
       });
