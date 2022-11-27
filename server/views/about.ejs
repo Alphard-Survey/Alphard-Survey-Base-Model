@@ -1,41 +1,55 @@
 
 <%- include partials/header.ejs %>
-     <%- include partials/main_nav.ejs %>
-    <main class="container">
-        <div class="offset-md-4 col-md-6" id="aboutBox">
-           <h3 class="role-header">Team Member Roles</h3>
-            <table>
-                <tr class="role-tr">
-                    <th class=role-th>Name</th>
-                    <th class=role-th>Role</th>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>David Piertrocola </td>
-                    <td class=role-td>DB Designer</td>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>Jacob Todasco</td>
-                    <td class=role-td>Full-stack Developer</td>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>Jungyu Lee </td>
-                    <td class=role-td>Lead Software Engineer</td>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>Menal Humeda</td>
-                    <td class=role-td>Project Manager</td>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>Ryan Arefeh</td>
-                    <td class=role-td>UI Programmer</td>
-                </tr>
-                <tr class="role-tr">
-                    <td class=role-td>Zack Havers</td>
-                    <td class=role-td> Web Designer</td>
-                </tr>
-            </table>
+<%- include partials/main_nav.ejs %>
+     <div class="aboutContent">
+        <div class="titleAbout">
+            <div class="titleText">
+                <h1>About Us</h1>
+            </div>
         </div>
-    </main>
+            <div class="aboutBox">
+                <img src="/Assets/images/DavidPietrocola.jpg" alt="David Pietrocola">
+                    <div class="aboutText">
+                        <h1>David Pietrocola</h1>
+                        <h1>DB Designer</h1>
+                    </div>
+            </div>
+            <div class="aboutBox">
+                <img src="/Assets/images/JungyuLee.jpg" alt="Jungyu Lee">
+                    <div class="aboutText">
+                        <h1>Jungyu Lee</h1>
+                        <h1>Lead Software Engineer</h1>
+                    </div>
+            </div>
+            <div class="aboutBox">
+                <img src="/Assets/images/ryan.jpg" alt="Ryan Arefeh">
+                    <div class="aboutText">
+                        <h1>Ryan Arefeh</h1>
+                        <h1>UI Programmer</h1>
+                    </div>
+            </div>
+            <div class="aboutBox">
+                <img src="/Assets/images/PXL_20221017_043534829_2.jpg" alt="Jacob Todasco">
+                    <div class="aboutText">
+                        <h1>Jacob Todasco</h1>
+                        <h1>Full Stack Developer</h1>
+                    </div>
+            </div>
+            <div class="aboutBox">
+                <img src="/Assets/images/20211028_163858_HDR (1).jpg" alt="Zachary Havers">
+                    <div class="aboutText">
+                        <h1>Zachary Havers</h1>
+                        <h1>Web Designer</h1>
+                    </div>
+            </div>
+            <div class="aboutBox">
+                <img src="/Assets/images/IMG_3239.jpg" alt="Menal Humeda">
+                    <div class="aboutText">
+                        <h1>Menal Humeda</h1>
+                        <h1>Project Manager</h1>
+                    </div>
+        </div>
+    </div>
 <%- include partials/bottom_nav.ejs %> 
 <%- include partials/footer.ejs %>
 

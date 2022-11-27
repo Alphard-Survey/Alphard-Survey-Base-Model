@@ -141,3 +141,46 @@ body {
     padding-top: 60px;
 }
 
+.titleAbout {
+    background-color: lightgrey;
+    box-shadow: 10px 10px lightblue;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.titleText {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 200px;
+}
+
+
+.aboutContent {
+    width: 90%;
+    margin: auto;
+}
+
+.aboutBox {
+    background-color: lightgrey;
+    box-shadow: 10px 10px lightblue;
+    padding: 10px;
+    margin-bottom: 40px;
+    height: fit-content;
+    border-radius: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.aboutBox img {
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+}
+
+.aboutText {
+    font-family: 'Bebas Neue', cursive;
+    float: right;
+    text-align: right;
+    padding-right: 20px;
+}
