@@ -53,12 +53,12 @@ app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs"); // express  -e
 
 // Set the limit of requests
-app.use(
-  rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMsd
-  })
-);
+// app.use(
+//   rateLimit({
+//     windowMs: 15 * 60 * 1000, // 15 minutes
+//     max: 100, // limit each IP to 100 requests per windowMsd
+//   })
+// );
 
 app.use(helmet());
 app.use(cors());
@@ -67,7 +67,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../../public")));
+app.use(express.static(path.join(__dirname, "../../public/")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
 //setup express session
