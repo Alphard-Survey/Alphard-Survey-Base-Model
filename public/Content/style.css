@@ -2,10 +2,13 @@ body{
   background-color: #e0e0e0;
 }
 .container{
-  border-radius: 75px;
+border-radius: 75px;
 background: #e0e0e0;
 box-shadow:  22px 22px 85px #c5c5c5,
              -22px -22px 85px #fbfbfb;
+margin-top: 10px;
+padding-top: 50px;
+padding-bottom: 50px;
 }
 
 .hero{
