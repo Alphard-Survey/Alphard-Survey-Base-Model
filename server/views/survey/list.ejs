@@ -41,6 +41,10 @@
 
         <!--Repetable Templet row-->
         <% for (let count=0; count < SurveyList.length; count++){%>
+          <% if (SurveyList[count].name == null) { %>
+            
+          <%} else { %>
+
           <tr>
             <td class="text-center col-2"><%=SurveyList[count].name %></td>
             <td class="text-center"><%=SurveyList[count].owner %></td>
@@ -82,7 +86,9 @@
 
             
           </tr>
+          <%}%>
         <%}%>
+
       </table>
     </div>
   </div>
