@@ -14,7 +14,6 @@ let mongoose = require("mongoose");
 
 //create reference to the model (dbschema)
 let Survey = require("../models/survey");
-let Response = require("../models/response");
 const { findById } = require("../models/survey");
 
 module.exports.displaySurveyList = (req, res, next) => {
