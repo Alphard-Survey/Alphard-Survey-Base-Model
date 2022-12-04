@@ -20,6 +20,7 @@ module.exports.displaySurveyList = (req, res, next) => {
     if (err) {
       return console.error(err);
     } else {
+      ;
       res.render("survey/list", {
         title: "Surveys",
         SurveyList: surveyList,

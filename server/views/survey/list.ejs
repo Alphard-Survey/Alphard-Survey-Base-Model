@@ -28,9 +28,9 @@
           <th class="text-center">Start Date</th>
           <th class="text-center">End Date</th>
           <th class="text-center">Active</th>
+          <th class="text-center"></th>
           
           <% if(typeof displayName == 'string' && displayName) { %>
-          <th class="text-center"></th>
           <th class="text-center"></th>
    
           <th class="text-center"></th>
@@ -47,15 +47,15 @@
             <td class="text-center col-2"><%=SurveyList[count].startDate %></td>
             <td class="text-center col-2"><%=SurveyList[count].endDate %></td>
             <td class="text-center"><%=SurveyList[count].isActive %></td>
-            
-            <% if(typeof displayName == 'string' && displayName) { %>
-    
             <% if (SurveyList[count].isActive == "Y") { %>
             <td class="text-center col-2"><a href="/survey-list/answer/<%= SurveyList[count]._id %>" 
               class="btn btn-secondary btn-sm"> Answer Survey</a></td>
             <% } else  { %>
             <td class="text-center col-2">-</td>
             <% } %> 
+            
+            <% if(typeof displayName == 'string' && displayName) { %>
+    
               
             <!-- <td class="text-center col-1">
               <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
