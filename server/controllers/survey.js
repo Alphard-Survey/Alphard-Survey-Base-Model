@@ -14,6 +14,8 @@ let mongoose = require("mongoose");
 
 //create reference to the model (dbschema)
 let Survey = require("../models/survey");
+let Response = require("../models/response");
+const { findById } = require("../models/survey");
 
 module.exports.displaySurveyList = (req, res, next) => {
   Survey.find((err, surveyList) => {
@@ -26,7 +28,6 @@ module.exports.displaySurveyList = (req, res, next) => {
         SurveyList: surveyList,
         displayName: req.user ? req.user.displayName : "", 
       });
-      //render survey and pass title and Booklist variable we are passing bookList object to BookList property
     }
   });
 };
@@ -122,8 +123,7 @@ module.exports.deletepage = (req, res, next) => {
 };
 
 module.exports.displayanswerpage = (req, res, next) => {
-  let id = req.params.id; //id of actual object
-
+  let id = req.params.id;
   Survey.findById(id, (err, surveytoanswer) => {
     if (err) {
       console.log(err);
@@ -140,22 +140,15 @@ module.exports.displayanswerpage = (req, res, next) => {
 };
 
 module.exports.processinganswerpage = (req, res, next) => {
-  let id = req.params.id; //id of actual object
-
   let answersurvey = Survey({
-    _id: id,
-    q1: req.body.q1,
-    q2: req.body.q2,
-    q3: req.body.q3,
-    q4: req.body.q4,
-    q5: req.body.q5,
+    survey_id: req.params.id,
     a1: req.body.a1,
     a2: req.body.a2,
     a3: req.body.a3,
     a4: req.body.a4,
     a5: req.body.a5,
   });
-  Survey.updateOne({ _id: id }, answersurvey, (err) => {
+  Survey.create(answersurvey, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
@@ -167,8 +160,9 @@ module.exports.processinganswerpage = (req, res, next) => {
 };
 
 module.exports.displayresponsepage = (req, res, next) => {
+  let survey_id = req.params.survey_id;
   let id = req.params.id;
-  Survey.findById(id, (err, surveytoresponse) => {
+  Survey.find((err, surveytoresponse) => {
     if (err) {
       console.log(err);
       res.end(err);
@@ -176,11 +170,12 @@ module.exports.displayresponsepage = (req, res, next) => {
       //show the response view
       res.render("survey/response", {
         title: "Survey Response",
-        survey: surveytoresponse,
+        ResponseList: surveytoresponse,
         displayName: req.user ? req.user.displayName : "",
+        page: req.url,
       });
     }
   });
-
 }
+
 
