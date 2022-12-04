@@ -22,11 +22,12 @@ let surveyModel = mongoose.Schema(
     endDate: String,
     isActive:String,
     type: String,
+    survey_id:String,
     q1: String,
     q2: String,
     q3: String,
     q4: String,
-    q5: String,  
+    q5: String,
     a1: String,
     a2: String,
     a3: String,
@@ -39,5 +40,5 @@ let surveyModel = mongoose.Schema(
   }
 );
 
-//booksmodel to create new book more powerful than just class
+//surveymodel to create new survey more powerful than just class
 module.exports = mongoose.model("Survey", surveyModel);
