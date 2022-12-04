@@ -1,65 +1,39 @@
 <%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
 
+
 <div class="container">
     <div class="row">
       <div class="offset-md-3 col-md-6" id="responseForm">
         <h1><%=title %></h1>
-  
+        
         <form class="form" method="post">
-  
-          <div class="from-group">
-            <label id="qt1" for="q1TextField">Question 1</label>
-            <p><%= survey.q1 %></p>
+            <% for (let count=0; count < ResponseList.length; count++){%>
+              <% if (page.substring(10, 34) == ResponseList[count].survey_id) { %>
 
-          </div>
-          <div class="from-group">
-            <label for="a2TextField">Answer 1</label>
-            <p><%= survey.a1 %></p>
-          </div>
-  
-          <div class="from-group">
-            <label id="qt1" for="q2TextField">Question 2</label>
-            <p><%= survey.q2 %></p>
-          </div>
-
-          <div class="from-group">
-            <label for="a2TextField">Answer 2</label>
-            <p><%= survey.a2 %></p>
-          </div>
-
-          <div class="from-group">
-            <label id="qt1" for="q3TextField">Question 3</label>
-            <p><%= survey.q3 %></p>
-          </div>
-
-          <div class="from-group">
-            <label for="a3TextField">Answer 3</label>
-            <p><%= survey.a3 %></p>
-          </div>
-
-          <div class="from-group">
-            <label id="qt1" for="q4TextField">Question 4</label>
-            <p><%= survey.q4 %></p>
-          </div>
-
-          <div class="from-group">
-            <label for="a4TextField">Answer 4</label>
-            <p><%= survey.a4 %></p>
-          </div>
-
-          <div class="from-group">
-            <label id="qt1" for="q5TextField">Question 5</label>
-            <p><%= survey.q5 %></p>
-          </div>
-  
-          <div class="from-group">
-            <label for="a5TextField">Answer 5</label>
-            <p><%= survey.a5 %></p>
-          </div>
+              <table class="table table-bordered table-striped table-hover">
     
-          <a href="/survey-list" class="btn btn-warning" id="btn1">
-            <i class="fas fa-undo"></i>Back
-          </a>
+                <tr>
+                  <th class="text-center col-2">Q1</th>
+                  <th class="text-center col-2">Q2</th>
+                  <th class="text-center col-2">Q3</th>
+                  <th class="text-center col-2">Q4</th>
+                  <th class="text-center col-2">Q5</th>
+    
+                </tr>  
+                <tr>
+                  <td><%=ResponseList[count].a1 %></td>
+                  <td><%=ResponseList[count].a2 %></td>
+                  <td><%=ResponseList[count].a3 %></td>
+                  <td><%=ResponseList[count].a4 %></td>
+                  <td><%=ResponseList[count].a5 %></td>
+                </tr>
+              </table>    
+    
+            <%}%>
+      
+          <%} %> 
+             
+          
         </form>
       </div>
     </div>
