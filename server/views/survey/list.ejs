@@ -40,55 +40,56 @@
         </tr>
 
         <!--Repetable Templet row-->
+ 
         <% for (let count=0; count < SurveyList.length; count++){%>
           <% if (SurveyList[count].name == null) { %>
             
           <%} else { %>
-
-          <tr>
-            <td class="text-center col-2"><%=SurveyList[count].name %></td>
-            <td class="text-center"><%=SurveyList[count].owner %></td>
-            <td class="text-center col-2"><%=SurveyList[count].startDate %></td>
-            <td class="text-center col-2"><%=SurveyList[count].endDate %></td>
-            <td class="text-center"><%=SurveyList[count].isActive %></td>
-            <% if (SurveyList[count].isActive == "Y") { %>
-            <td class="text-center col-2"><a href="/survey-list/answer/<%= SurveyList[count]._id %>" 
-              class="btn btn-secondary btn-sm"> Answer Survey</a></td>
-            <% } else  { %>
-            <td class="text-center col-2">-</td>
-            <% } %> 
-            
-            <% if(typeof displayName == 'string' && displayName) { %>
-    
+            <tr>
+              <td class="text-center col-2"><%=SurveyList[count].name %></td>
+              <td class="text-center"><%=SurveyList[count].owner %></td>
+              <td class="text-center col-2"><%=SurveyList[count].startDate %></td>
+              <td class="text-center col-2"><%=SurveyList[count].endDate %></td>
+              <td class="text-center"><%=SurveyList[count].isActive %></td>
+              <% if (SurveyList[count].isActive == "Y") { %>
+              <td class="text-center col-2"><a href="/survey-list/answer/<%= SurveyList[count]._id %>" 
+                class="btn btn-secondary btn-sm"> Answer Survey</a></td>
+              <% } else  { %>
+              <td class="text-center col-2">-</td>
+              <% } %> 
               
-            <!-- <td class="text-center col-1">
-              <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
-              <i class="fas fa-pencil-alt"></i> Edit</a>
-            </td>
-            <td class="text-center col-1">
-              <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
-              <i class="fas fa-trash-alt"></i> Del</a>
-            </td> -->
-
-              <td class="text-center col-1">
+              <% if(typeof displayName == 'string' && displayName) { %>
+      
+                
+              <!-- <td class="text-center col-1">
                 <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
                 <i class="fas fa-pencil-alt"></i> Edit</a>
               </td>
               <td class="text-center col-1">
                 <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                 <i class="fas fa-trash-alt"></i> Del</a>
+              </td> -->
+  
+                <td class="text-center col-1">
+                  <a href="/survey-list/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
+                  <i class="fas fa-pencil-alt"></i> Edit</a>
+                </td>
+                <td class="text-center col-1">
+                  <a href="/survey-list/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash-alt"></i> Del</a>
+                </td>
+              <td class="text-center col-1">
+                <a href="/survey-list/response/<%= SurveyList[count]._id %>" class="btn btn-success btn-sm">Response</a>
               </td>
-            <td class="text-center col-1">
-              <a href="/survey-list/response/<%= SurveyList[count]._id %>" class="btn btn-success btn-sm">Response</a>
-            </td>
-            <%}%>
-
-
-            
-          </tr>
+              <%}%>
+  
+  
+              
+            </tr>
           <%}%>
-        <%}%>
-
+   
+        <% }%>
+          
       </table>
     </div>
   </div>
