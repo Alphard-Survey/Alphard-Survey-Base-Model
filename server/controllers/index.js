@@ -31,7 +31,6 @@ module.exports.displayaboutpage = (req, res, next) => {
   });
 };
 
-
 module.exports.displayContactpage = (req, res, next) => {
   res.render("contact", {
     title: "Contact",
@@ -94,7 +93,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
   }
 };
 
-module.exports. processRegisterPage = (req, res, next) => {
+module.exports.processRegisterPage = (req, res, next) => {
   // instantiate a user object
   let newUser = new User({
     username: req.body.username,
@@ -102,7 +101,7 @@ module.exports. processRegisterPage = (req, res, next) => {
     email: req.body.email,
     displayName: req.body.displayName,
     birthDate: req.body.birthDate,
-    phoneNumber: req.body.phoneNumber
+    phoneNumber: req.body.phoneNumber,
   });
 
   User.register(newUser, req.body.password, (err) => {
@@ -142,12 +141,25 @@ module.exports.displayUpdateProfilePage = (req, res, next) => {
 
 //Testing post request from edit user
 module.exports.processUpdateProfilePage = (req, res, next) => {
-  res.render("index", {
-    title: "Home",
-    displayName: req.user ? req.user.displayName : "",
+  let updatedUser = User({
+    _id: req.user._id,
+    username: req.body.username,
+    email: req.body.email,
+    displayName: req.body.displayName,
+    birthDate: req.body.birthDate,
+    phoneNumber: req.body.phoneNumber,
+  });
+
+  User.updateOne({ _id: req.user._id }, updatedUser, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      // refresh the user list
+      res.redirect("/survey-list");
+    }
   });
 };
-
 
 module.exports.performLogout = (req, res, next) => {
   req.logout(function (err) {
