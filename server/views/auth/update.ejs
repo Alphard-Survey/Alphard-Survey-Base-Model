@@ -1,14 +1,11 @@
-<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+<%- include ../partials/header.ejs %> 
+<%- include ../partials/main_nav.ejs %>
 
 <main class="container">
-  <!-- Message Area -->
-  <% if(messages.length > 0) {%>
-  <div class="alert alert-danger"><%= messages %></div>
-  <% } %>
-
+    
   <div class="row">
     <div class="offset-md-4 col-md-4">
-      <h1>Please Register</h1>
+      <h1>Edit Profile</h1>
       <form method="POST" autocomplete="off">
         <fieldset class="form-group">
           <label for="username">Username: </label>
@@ -49,33 +46,34 @@
             class="form-control"
             name="displayName" 
             placeholder="Enter Display Name"
-            id="displayName"
-             required>
+            id="displayName" 
+            required>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="birthDate">Birth Date: </label>
+            <input type="text" 
+            class="form-control"
+            name="birthDate" 
+            placeholder="Enter Birth Date"
+            id="birthDate" 
+            required>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="phoneNumber">Phone Number: </label>
+            <input type="text" 
+            class="form-control"
+            name="phoneNumber" 
+            placeholder="Enter Phone Number"
+            id="phoneNumber" 
+            required>
         </fieldset>
         
-        <fieldset class="form-group">
-          <label for="birthDate">Birth Date: </label>
-          <input type="text" 
-          class="form-control"
-          name="birthDate" 
-          placeholder="Enter Birth Date"
-          id="birthDate" 
-          required>
-      </fieldset>
-
-      <fieldset class="form-group">
-          <label for="phoneNumber">Phone Number: </label>
-          <input type="text" 
-          class="form-control"
-          name="phoneNumber" 
-          placeholder="Enter Phone Number"
-          id="phoneNumber" 
-          required>
-      </fieldset>
 
         <fieldset class="form-group text-right">
-          <input type="submit" class="btn btn-success" value="Register" />
-          <a href="/">
+          <input type="submit" class="btn btn-success" value="Edit" />
+          <a href="/profile">
             <input type="button" class="btn btn-warning" value="Cancel" />
           </a>
         </fieldset>
@@ -84,4 +82,5 @@
   </div>
 </main>
 
-<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>
+<%- include ../partials/bottom_nav.ejs %> 
+<%- include ../partials/footer.ejs %>

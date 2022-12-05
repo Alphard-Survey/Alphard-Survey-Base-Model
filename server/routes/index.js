@@ -25,6 +25,9 @@ router.get("/about", indexController.displayaboutpage);
 /* GET Contact Us page. */
 router.get("/contact", indexController.displayContactpage);
 
+/* GET Profile Page. */
+router.get("/profile", indexController.displayProfilepage);
+
 /* GET Route for displaying the Login page */
 router.get("/login", indexController.displayLoginPage);
 
@@ -39,5 +42,8 @@ router.post("/register", indexController.processRegisterPage);
 
 /* GET to perform UserLogout */
 router.get("/logout", indexController.performLogout);
+
+/* GET Update Profile Page */
+router.get("/update", indexController.displayUpdateProfilePage);
 
 module.exports = router;

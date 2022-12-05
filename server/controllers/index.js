@@ -39,6 +39,14 @@ module.exports.displayContactpage = (req, res, next) => {
   });
 };
 
+module.exports.displayProfilepage = (req, res, next) => {
+  res.render("profile", {
+    title: "Profile",
+    email: req.user ? req.user.email : "",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
 module.exports.displayLoginPage = (req, res, next) => {
   // check if the user is already logged in
   if (!req.user) {
@@ -93,6 +101,8 @@ module.exports.processRegisterPage = (req, res, next) => {
     //password: req.body.password
     email: req.body.email,
     displayName: req.body.displayName,
+    birthDate: req.body.birthDate,
+    phoneNumber: req.body.phoneNumber
   });
 
   User.register(newUser, req.body.password, (err) => {
@@ -121,6 +131,15 @@ module.exports.processRegisterPage = (req, res, next) => {
     }
   });
 };
+
+module.exports.displayUpdateProfilePage = (req, res, next) => {
+  res.render("auth/update", {
+    title: "Edit Profile",
+    email: req.user ? req.user.email : "",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
 
 module.exports.performLogout = (req, res, next) => {
   req.logout(function (err) {

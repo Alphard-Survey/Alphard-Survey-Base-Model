@@ -40,6 +40,18 @@ let User = mongoose.Schema(
       trim: true,
       required: "Display Name is required",
     },
+    birthDate: {
+      type: String,
+      default: "",
+      trim: true,
+      required: "Birth Date Is Required",
+    },
+    phoneNumber: {
+      type: String,
+      default: "",
+      trim: true,
+      required: "Phone Number Is Required",
+    },
     created: {
       type: Date,
       default: Date.now,

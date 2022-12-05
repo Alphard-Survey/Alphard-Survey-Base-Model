@@ -1,38 +1,28 @@
-<html>
-    
-    <head>
-        <title>Contact Us Page</title>
-    </head>
-    <%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
+<%- include partials/header.ejs %> 
+<%- include partials/main_nav.ejs %>
 
     <main id="container">  
-    <body class="contInfo">
-           <h2 class="contact"> Contact Us</h2>
-           <h4 class="headfour"> If you have any query you can contact us here!</h4>
-           <br>
-           <br>
-          <div>
-           <fieldset >
-               <input class="input" type="text" id="name" name="name" placeholder="Name"> 
-               <input class="input" type="text" id="email" name="email" placeholder="Email">
-               <br>
-               <br>
-               <input class="subject" type="text" id="subject" name="subject" placeholder="Subject">
-               <br>
-               <br>
-               <input class="comment" type="text" id="comment" name="comment" placeholder="Comment">
-               <br><br>
+        <body class="contInfo">
+            <h2 class="contact"> Contact Us</h2>
+            <h4 class="headfour"> If you have any query you can contact us here!</h4>
+            <br>
+            <br>
+            <div>
+            <fieldset >
+                <input class="input" type="text" id="name" name="name" placeholder="Name"> 
+                <input class="input" type="text" id="email" name="email" placeholder="Email">
+                <br>
+                <br>
+                <input class="subject" type="text" id="subject" name="subject" placeholder="Subject">
+                <br>
+                <br>
+                <input class="comment" type="text" id="comment" name="comment" placeholder="Comment">
+                <br><br>
+                <input type="button" id="send" value="Send">
+            </fieldset>
+            </div>
+        </body>
+    </main>
 
-        
-
-               <input type="button" id="send" value="Send">
-           </fieldset>
-        </div>
-
-
-           
-
-    </body>
-</main>
-<%- include partials/bottom_nav.ejs %> <%- include partials/footer.ejs %>
-</html>
+<%- include partials/bottom_nav.ejs %> 
+<%- include partials/footer.ejs %>

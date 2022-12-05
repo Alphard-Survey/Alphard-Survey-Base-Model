@@ -1,0 +1,22 @@
+<%- include partials/header.ejs %> 
+<%- include partials/main_nav.ejs %>
+
+<div class="profile-container">
+    <h1>Profile</h1>
+        <div class="user-data">
+            <h2>Username: <%= displayName %></h2>
+            <h2>Email: <%= email %></h2>
+            <h2>Display Name: </h2>
+            <h2>Date Of Birth: </h2>
+            <h2>Phone Number: </h2>
+            <a href="/update">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-edit"></i>Edit Profile
+              </button>
+            </a>
+        </div>
+</div>
+
+
+<%- include partials/bottom_nav.ejs %> 
+<%- include partials/footer.ejs %>
