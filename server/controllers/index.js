@@ -94,7 +94,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
   }
 };
 
-module.exports.processRegisterPage = (req, res, next) => {
+module.exports. processRegisterPage = (req, res, next) => {
   // instantiate a user object
   let newUser = new User({
     username: req.body.username,
@@ -136,6 +136,14 @@ module.exports.displayUpdateProfilePage = (req, res, next) => {
   res.render("auth/update", {
     title: "Edit Profile",
     email: req.user ? req.user.email : "",
+    displayName: req.user ? req.user.displayName : "",
+  });
+};
+
+//Testing post request from edit user
+module.exports.processUpdateProfilePage = (req, res, next) => {
+  res.render("index", {
+    title: "Home",
     displayName: req.user ? req.user.displayName : "",
   });
 };

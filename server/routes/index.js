@@ -46,4 +46,7 @@ router.get("/logout", indexController.performLogout);
 /* GET Update Profile Page */
 router.get("/update", indexController.displayUpdateProfilePage);
 
+router.post("/update", indexController.processUpdateProfilePage);
+
+
 module.exports = router;
