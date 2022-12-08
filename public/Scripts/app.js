@@ -15,3 +15,15 @@
   }
   window.addEventListener("load", Start);
 })();
+
+
+
+(function (){
+  function saveAsPDF() {
+    window.print();
+  }
+  var savePDF = document.getElementById("savePDF");
+  savePDF.addEventListener("click", saveAsPDF, false);
+})();
+
+
