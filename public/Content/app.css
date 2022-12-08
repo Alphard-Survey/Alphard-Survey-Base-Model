@@ -1,207 +1,201 @@
 /* custom css goes here */
 body {
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .role-header {
-    text-align: left;
+  text-align: left;
 }
 
 .role-tr {
-    text-align: center;
+  text-align: center;
 }
 .role-th {
-    border: 1px solid black;
-    background-color: #4287f5;
-    color:white;
+  border: 1px solid black;
+  background-color: #4287f5;
+  color: white;
 }
 .role-td {
   width: 150px;
   border: 1px solid black;
   padding: 5px;
-}        
+}
 
 #answerForm {
-    margin-top: 10px;
-    border-style: solid;
-    border-radius: 10px;
-    padding-bottom: 20px;
-    width: 80%;
+  margin-top: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  width: 80%;
 }
 
-#answerForm p, label, input {
-    margin-top: 10px;
-    margin-bottom: 10px;
+#answerForm p,
+label,
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-
 
 #qtl {
-    background-color: lightgrey;
-    width: 100%;
-    padding-left: 5px;
-    border-radius: 10px;
+  background-color: lightgrey;
+  width: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
 }
 
 #ans {
-    background-color: lightgreen;
-    width: 100%;
-    padding-left: 5px;
-    border-radius: 10px;
+  background-color: lightgreen;
+  width: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
 }
 
-#answerForm  button {
-    margin-top: 10px;
+#answerForm button {
+  margin-top: 10px;
 }
 
 .jumbotron {
-    margin-top: 20px;
-    box-shadow: 10px 10px lightgreen;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 0px solid rgba(255, 255, 255, 0);
+  color: #ffff;
 }
 
 #editBox label {
-    background-color: lightgrey;
-    width: 100%;
-    border-radius: 10px;
-    padding-left: 10px;
-    box-shadow: 2px 2px lightgreen;
+  background-color: lightgrey;
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 10px;
+  box-shadow: 2px 2px lightgreen;
 }
 
 #editBox {
-    margin-top: 10px;
-    border-style: solid;
-    padding-bottom: 20px;
-    width: 50%;
-    border-radius: 10px;
+  margin-top: 10px;
+  border-style: solid;
+  padding-bottom: 20px;
+  width: 50%;
+  border-radius: 10px;
 }
 
 #btn1 {
-    width: 100%;
-    margin-top: 10px;
+  width: 100%;
+  margin-top: 10px;
 }
 
-#responseForm{
-    border-style: solid;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    text-align: center;
+#responseForm {
+  border-style: solid;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
-.logoMain{
-    margin-top: 100px;
+.logoMain {
+  margin-top: 100px;
 }
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-
-#container
-{
-    
-    text-align: center;
+#container {
+  text-align: center;
 }
-.contact
-{
-    padding-top: 50px;
-    font-size: 4em;
-    opacity: 0.5;
+.contact {
+  padding-top: 50px;
+  font-size: 4em;
+  opacity: 0.5;
 }
-.input
-{
-    padding-left: 10px;
-    border-radius: 20px;
-    width: 200px;
-    height: 35px;
+.input {
+  padding-left: 10px;
+  border-radius: 20px;
+  width: 200px;
+  height: 35px;
 }
-.subject
-{
-    border-radius: 20px;
-    width: 400px;
-    height: 35px;
-    padding: 10px;
-    
-
+.subject {
+  border-radius: 20px;
+  width: 400px;
+  height: 35px;
+  padding: 10px;
 }
-.comment
-{
-    border-radius: 20px;
-    width: 400px;
-    height: 100px;
-    padding: 10px;
+.comment {
+  border-radius: 20px;
+  width: 400px;
+  height: 100px;
+  padding: 10px;
 }
-.headfour
-{
-    padding-top: 60px;
+.headfour {
+  padding-top: 60px;
 }
 
 .titleAbout {
-    background-color: lightgrey;
-    box-shadow: 10px 10px lightblue;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    height: 50px;
-    border-radius: 10px;
-    text-align: center;
+  background-color: lightgrey;
+  box-shadow: 10px 10px lightblue;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .titleText {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 200px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 200px;
 }
 
-
 .aboutContent {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
 .aboutBox {
-    background-color: lightgrey;
-    box-shadow: 10px 10px lightblue;
-    padding: 10px;
-    margin-bottom: 40px;
-    height: fit-content;
-    border-radius: 10px;
-    font-family: 'Bebas Neue', cursive;
+  background-color: lightgrey;
+  box-shadow: 10px 10px lightblue;
+  padding: 10px;
+  margin-bottom: 40px;
+  height: fit-content;
+  border-radius: 10px;
+  font-family: "Bebas Neue", cursive;
 }
 
 .aboutBox img {
-    width: 200px;
-    height: 200px;
-    border-radius: 40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
 }
 
 .aboutText {
-    font-family: 'Bebas Neue', cursive;
-    float: right;
-    text-align: right;
-    padding-right: 20px;
+  font-family: "Bebas Neue", cursive;
+  float: right;
+  text-align: right;
+  padding-right: 20px;
 }
 
-.profile-container{
-    width: 90%;
-    margin: auto;
-    background-color: lightgrey;
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-family: 'Bebas Neue';
-    position: relative;
-    border-radius: 10px;
+.profile-container {
+  width: 90%;
+  margin: auto;
+  background-color: lightgrey;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: "Bebas Neue";
+  position: relative;
+  border-radius: 10px;
 }
 
-.user-data{
-    width: fit-content;
-    margin: auto;
-    background-color: lightblue;
-    text-align: left;
-    margin-top: 20px;
-    padding: 10%;
-    border-radius: 10px;
-    box-shadow:  22px 22px 85px #c5c5c5,
-    -22px -22px 85px #fbfbfb;
+.user-data {
+  width: fit-content;
+  margin: auto;
+  background-color: lightblue;
+  text-align: left;
+  margin-top: 20px;
+  padding: 10%;
+  border-radius: 10px;
+  box-shadow: 22px 22px 85px #c5c5c5, -22px -22px 85px #fbfbfb;
 }
