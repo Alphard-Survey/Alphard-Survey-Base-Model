@@ -161,6 +161,8 @@ input {
   height: fit-content;
   border-radius: 10px;
   font-family: "Bebas Neue", cursive;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .aboutBox img {
