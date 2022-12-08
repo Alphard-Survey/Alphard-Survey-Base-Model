@@ -41,8 +41,11 @@ module.exports.displayContactpage = (req, res, next) => {
 module.exports.displayProfilepage = (req, res, next) => {
   res.render("profile", {
     title: "Profile",
+    username: req.user ? req.user.username : "",
     email: req.user ? req.user.email : "",
     displayName: req.user ? req.user.displayName : "",
+    birthDate: req.user ? req.user.birthDate : "",
+    phoneNumber: req.user? req.user.phone : "",
   });
 };
 
@@ -134,8 +137,11 @@ module.exports.processRegisterPage = (req, res, next) => {
 module.exports.displayUpdateProfilePage = (req, res, next) => {
   res.render("auth/update", {
     title: "Edit Profile",
+    username: req.user ? req.user.username : "",
     email: req.user ? req.user.email : "",
     displayName: req.user ? req.user.displayName : "",
+    birthDate: req.user ? req.user.birthDate : "",
+    phoneNumber: req.user? req.user.phone : "",
   });
 };
 
@@ -156,7 +162,7 @@ module.exports.processUpdateProfilePage = (req, res, next) => {
       res.end(err);
     } else {
       // refresh the user list
-      res.redirect("/survey-list");
+      res.redirect("/profile");
     }
   });
 };
