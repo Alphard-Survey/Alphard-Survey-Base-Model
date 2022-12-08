@@ -9,18 +9,21 @@
     <br>
     <br>
     <div>
+        <form method="post" autocomplete="off">
         <fieldset>
-            <input class="input" type="text" id="name" name="name" placeholder="Name">
-            <input class="input" type="text" id="email" name="email" placeholder="Email">
+            <input class="input" type="text" id="name" name="name" placeholder="Name" required>
+            <input class="input" type="text" id="email" name="email" placeholder="Email" required>
             <br>
             <br>
-            <input class="subject" type="text" id="subject" name="subject" placeholder="Subject">
+            <input class="subject" type="text" id="subject" name="subject" placeholder="Subject" required>
             <br>
             <br>
-            <input class="comment" type="text" id="comment" name="comment" placeholder="Comment">
+            <input class="comment" type="text" id="comment" name="comment" placeholder="Comment" required>
             <br><br>
-            <input type="button" id="send" value="Send">
+           <button  id="submit" style="background-color: lightgrey; border:0ch; font-weight: 200; float: center;"  > Send</button>
+           <br> <br>
         </fieldset>
+    </form>
     </div>
 
 </main>
