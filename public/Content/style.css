@@ -111,3 +111,39 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+.cstbtn{
+margin: auto;
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #5ae4a0;
+padding: 10px 30px;
+border: solid #5ae4a0 2px;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.cstbtn:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #5ae4a0;
+border: solid 2px #5ae4a0;
+}
+
+.hero2{
+  font-size: 25px;
+}
+.csta:hover{
+  text-decoration: none;
+}
