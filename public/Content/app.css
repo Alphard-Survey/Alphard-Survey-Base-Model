@@ -154,8 +154,8 @@ input {
 }
 
 .aboutBox {
-  background-color: lightgrey;
-  box-shadow: 10px 10px lightblue;
+  background-color: rgba(211, 211, 211, 0.504);
+  box-shadow: 10px 10px #abf8de;
   padding: 10px;
   margin-bottom: 40px;
   height: fit-content;
