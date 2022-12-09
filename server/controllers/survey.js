@@ -175,9 +175,49 @@ module.exports.displayresponsepage = (req, res, next) => {
       });
     }
   });
+}
 
+// export statistics
+module.exports.exportResponse = async(req, res)=>{
+  try{
+    const workbook = new excelJS.Workbook();
+    const worksheet = workbook.addWorksheet("My Responses");
 
+    worksheet.columns = [
+      { header: "Index", key: "Index"},
+      { header: "Survey_id", key: "survey_id"},      
+      { header: "Answer 1", key: "a1"},
+      { header: "Answer 2", key: "a2"},
+      { header: "Answer 3", key: "a3"},
+      { header: "Answer 4", key: "a4"},
+      { header: "Answer 5", key: "a5"},
+    ]
 
+    let counter = 1;
+    const responseData = await Survey.find({});
+      responseData.forEach((response)=> {
+          response.Index = counter;
+          worksheet.addRow(response);
+          counter++;            
+      })
+
+    worksheet.getRow(1).eachCell((cell) => {
+      cell.font = { bold: true };
+    });
+
+    res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
+    res.setHeader("Content-Disposition", `attachment; filename=responses.xlsx`);
+
+    return workbook.xlsx.write(res).then(()=>{
+      res.status(200);
+    });
+
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 
