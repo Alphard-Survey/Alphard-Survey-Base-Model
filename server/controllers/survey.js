@@ -211,7 +211,7 @@ module.exports.exportResponse = async(req, res)=>{
       "Content-Type",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
-    res.setHeader("Content-Disposition", `attachment; filename=responses.xlsx`);
+    res.setHeader("Content-Disposition", `attachment; filename=statistics.xlsx`);
 
     return workbook.xlsx.write(res).then(()=>{
       res.status(200);
