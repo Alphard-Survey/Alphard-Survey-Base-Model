@@ -52,6 +52,38 @@ router.get("/answer/:id", surveyController.displayanswerpage);
 router.post("/answer/:id", surveyController.processinganswerpage);
 
 /* GET Route for displaying the Response page - READ Operation */
-router.get("/response/:id", surveyController.displayresponsepage);
+router.get("/response/:id", requireAuth, surveyController.displayresponsepage);
+
+/* Get Route for exporting excel file - READ Operation */
+router.get("/export/", requireAuth, surveyController.exportResponse);
+
+
+
+
+// const {parse} = require('json2csv');
+// const fs = require("fs");
+
+// router.post('/export', async (req, res) => {
+//   Post.find({}, {_id:0, __v:0}, (err,post)=>{
+//     console.log("post", post);
+
+
+// const fields = ['a1', 'a2', 'a3', 'a4', 'a5', 'createdAt', 'updatedAt'];
+// const opts = {fields};
+// try {
+//   const csv = parse(post, opts);
+//   fs.writeFile("post1.csv", csv, function(error) {
+//     if(error) throw error;
+//     console.log("Write successfully!");
+//   });
+//   console.log(csv);
+// }  catch(err) {
+//   console.error(err);
+// }
+
+//   })
+// })
+
+
 
 module.exports = router;

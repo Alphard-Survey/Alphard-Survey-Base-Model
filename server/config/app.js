@@ -70,6 +70,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public/")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
+
 //setup express session
 app.use(
   session({
@@ -118,5 +119,35 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error", { title: "Error" });
 });
+
+
+// var fileSystem = require("fs");
+// var fastcsv = require("fast-csv");
+ 
+// app.use("/public", express.static(__dirname + "/public"));
+
+// app.listen(function () {
+//     console.log("Connected");
+ 
+//     app.get("/exportData", function (request, result) {
+ 
+//         var data = [
+//         {
+//         }, 
+
+//         ];
+ 
+//         var ws = fileSystem.createWriteStream("/public/data.csv");
+//       fastcsv
+//       .write(data, { headers: true })
+//       .on("finish", function () {
+//                 result.send("<a href='/public/data.csv' download='data.csv' id='download-link'></a><script>document.getElementById('download-link').click();</script>");
+//             })
+//             .pipe(ws);
+//     });
+// });
+
+
+
 
 module.exports = app;

@@ -1,45 +1,58 @@
 <%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
 
-
 <div class="container">
-    <div class="row">
-      <div class="offset-md-3 col-md-6" id="responseForm">
-        <h1><%=title %></h1>
-        
-        <form class="form" method="post">
-            <% for (let count=0; count < ResponseList.length; count++){%>
-              <% if (page.substring(10, 34) == ResponseList[count].survey_id) { %>
+  <div class="row">
+    <div class="offset-md-3 col-md-6" id="responseForm">
+      <h1><%=title %></h1>
+      <form class="form" method="post">
+        <table
+          class="table table-bordered table-striped table-hover"
+          id="response-table"
+        >
+          <tr>
+            <th class="text-center col-2"></th>
+            <th class="text-center col-2">Q1</th>
+            <th class="text-center col-2">Q2</th>
+            <th class="text-center col-2">Q3</th>
+            <th class="text-center col-2">Q4</th>
+            <th class="text-center col-2">Q5</th>
+          </tr>
+          <% for (let count=0, i = 1; count < ResponseList.length; count++){%>
+            <% if (page.substring(10, 34) == ResponseList[count].survey_id) { %>
 
-              <table class="table table-bordered table-striped table-hover">
-    
-                <tr>
-                  <th class="text-center col-2">Q1</th>
-                  <th class="text-center col-2">Q2</th>
-                  <th class="text-center col-2">Q3</th>
-                  <th class="text-center col-2">Q4</th>
-                  <th class="text-center col-2">Q5</th>
-    
-                </tr>  
-                <tr>
-                  <td><%=ResponseList[count].a1 %></td>
-                  <td><%=ResponseList[count].a2 %></td>
-                  <td><%=ResponseList[count].a3 %></td>
-                  <td><%=ResponseList[count].a4 %></td>
-                  <td><%=ResponseList[count].a5 %></td>
-                </tr>
-              </table>    
-    
+            <tr>
+              <td><%=i++ %></td>
+              <td><%=ResponseList[count].a1 %></td>
+              <td><%=ResponseList[count].a2 %></td>
+              <td><%=ResponseList[count].a3 %></td>
+              <td><%=ResponseList[count].a4 %></td>
+              <td><%=ResponseList[count].a5 %></td>
+            </tr>
             <%}%>
-      
-          <%} %> 
-             
-          <a href="/survey-list" class="btn btn-warning" id="btn1">
-            <i class="fas fa-undo"></i>Back
-          </a>    
-        </form>
-      </div>
+            
+            <% if (count == ResponseList.length -1) { %>
+            <tr>
+              <td>Result</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+                                         
+            
+            <%}%>             
+
+          <%}%>
+        </table>
+
+        <a href="/survey-list/" class="btn btn-warning" id="btn1">
+          <i class="fas fa-undo"></i>Back
+        </a>
+
+      </form>
     </div>
   </div>
-  
+</div>
 
 <%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

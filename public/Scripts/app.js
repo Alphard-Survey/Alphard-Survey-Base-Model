@@ -56,9 +56,7 @@
    
   }
 
-  var send = document.getElementById("send");
-     send.addEventListener("click", sendinfo, false);
 
-
+  
 })();
 
