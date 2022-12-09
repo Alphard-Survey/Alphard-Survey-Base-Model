@@ -45,7 +45,7 @@ module.exports.displayProfilepage = (req, res, next) => {
     email: req.user ? req.user.email : "",
     displayName: req.user ? req.user.displayName : "",
     birthDate: req.user ? req.user.birthDate : "",
-    phoneNumber: req.user? req.user.phone : "",
+    phoneNumber: req.user? req.user.phoneNumber : "",
   });
 };
 
