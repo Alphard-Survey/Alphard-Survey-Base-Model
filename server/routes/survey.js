@@ -54,4 +54,8 @@ router.post("/answer/:id", surveyController.processinganswerpage);
 /* GET Route for displaying the Response page - READ Operation */
 router.get("/response/:id", surveyController.displayresponsepage);
 
+/* Get Route for exporting excel file - READ Operation */
+router.get("/export/", requireAuth, surveyController.exportResponse);
+
+
 module.exports = router;
