@@ -15,6 +15,7 @@ let mongoose = require("mongoose");
 //create reference to the model (dbschema)
 let Survey = require("../models/survey");
 const { findById } = require("../models/survey");
+const excelJS = require('exceljs');
 
 module.exports.displaySurveyList = (req, res, next) => {
   Survey.find((err, surveyList) => {
@@ -209,7 +210,7 @@ module.exports.exportResponse = async(req, res)=>{
       "Content-Type",
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
-    res.setHeader("Content-Disposition", `attachment; filename=responses.xlsx`);
+    res.setHeader("Content-Disposition", `attachment; filename=statistics.xlsx`);
 
     return workbook.xlsx.write(res).then(()=>{
       res.status(200);
