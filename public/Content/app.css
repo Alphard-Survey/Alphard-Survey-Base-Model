@@ -1,6 +1,8 @@
 /* custom css goes here */
 body {
     padding-bottom: 100px;
+    background-image: url("/public/Assets/images/Wave.svg");
+
 }
 
 .role-header {

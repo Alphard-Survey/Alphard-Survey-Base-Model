@@ -1,5 +1,5 @@
 body{
-  background-image: url("Wave.svg");
+  background-image: url("/public/Assets/images/Wave.svg");
 }
 .container{
   border-radius: 75px;
