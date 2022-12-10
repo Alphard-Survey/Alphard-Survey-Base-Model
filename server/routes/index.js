@@ -52,7 +52,7 @@ router.post("/update", indexController.processUpdateProfilePage);
 
 router.post('/contact', function(req, res){
     //do something
-    res.jsonp("THANK YOU FOR VISTING OUR WEBSITE LOOKING FORWARD TO ASSIT YOU !")
+    res.jsonp("THANK YOU FOR VISTING OUR WEBSITE! LOOKING FORWARD TO ASSISTING YOU !")
     })
 
 

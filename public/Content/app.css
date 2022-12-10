@@ -109,7 +109,8 @@ input {
 .contact {
   padding-top: 50px;
   font-size: 4em;
-  opacity: 0.5;
+  opacity: 0.75;
+  text-align: center;
 }
 .input {
   padding-left: 10px;
@@ -131,6 +132,7 @@ input {
 }
 .headfour {
   padding-top: 60px;
+  text-align: center;
 }
 
 .titleAbout {
@@ -179,9 +181,10 @@ input {
 }
 
 .profile-container {
-  width: 90%;
+  width: 70%;
   margin: auto;
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.36);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   text-align: center;
   margin-top: 20px;
   padding-top: 50px;
