@@ -1,6 +1,6 @@
 /* custom css goes here */
 body {
-  padding-bottom: 100px;
+  padding-bottom: 200px;
 }
 
 .role-header {
@@ -61,7 +61,6 @@ input {
   -webkit-backdrop-filter: blur(0px);
   border-radius: 10px;
   border: 0px solid rgba(255, 255, 255, 0);
-  color: rgb(0, 0, 0);
 }
 
 #editBox label {
