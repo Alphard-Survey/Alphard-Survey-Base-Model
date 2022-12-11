@@ -203,22 +203,6 @@ input {
 }
 
 /* Login css page */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-.wrapper {
-  height: 100%;
-}
-
-@keyframes gradient {
-  100% {
-    background-size: 4000px 1000px;
-  }
-}
-
 .login-body {
   display: grid;
   place-items: center;
