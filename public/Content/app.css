@@ -180,17 +180,19 @@ input {
 
 .profile-container {
   margin-top: 20px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  position: relative;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .user-data {
