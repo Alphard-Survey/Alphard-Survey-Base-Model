@@ -44,21 +44,27 @@ let User = mongoose.Schema(
       type: String,
       default: "",
       trim: true,
-      required: "Birth Date Is Required",
+      required: "Birth Date is Required",
     },
     phoneNumber: {
       type: String,
       default: "",
       trim: true,
-      required: "Phone Number Is Required",
+      required: "Phone Number is Required",
     },
-    created: {
+    created: {          //If this is for creating an Account, then it is okay to leave as is. - Jacob
+      type: Date,       //If this is for creating a Survey, then swap the commented min/max.
+      default: Date.now,
+      min: '1900-01-01',
+      max: Date.now,
+      //min: Date.now,
+      //max: '2099-12-31',
+    },
+    update: {     //If this is for updating profile birthday, then it's okay to leave as is.
       type: Date,
       default: Date.now,
-    },
-    update: {
-      type: Date,
-      default: Date.now,
+      min: '1900-01-01',
+      max: Date.now,
     },
   },
   {
