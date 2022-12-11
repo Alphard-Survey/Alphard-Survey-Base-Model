@@ -1,6 +1,6 @@
 <!-- Main Navigation -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark glass">
+  <nav class="navbar navbar-expand-lg navbar-light glass">
     
     <a class="navbar-brand" href="/"><img src="/Assets/images/Logo.png" alt="logo" width="30" height="30">Alphard Survey</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
       <ul class="navbar-nav ml-auto">
 
         <% if (title == "Home"){ %>
-        <li class="nav-item active">
+        <li class="nav-item">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
@@ -19,7 +19,7 @@
         </li>
 
         <% if (title == "About Us") { %>
-        <li class="nav-item active">
+        <li class="nav-item">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
@@ -27,7 +27,7 @@
         </li>
 
         <% if (title == "Survey") { %>
-          <li class="nav-item active">
+          <li class="nav-item">
           <% } else  { %>
           <li class="nav-item">
           <% } %>
@@ -35,7 +35,7 @@
           </li>  
 
       <% if (title == "Contact") { %>
-        <li class="nav-item active">
+        <li class="nav-item">
         <% } else  { %>
         <li class="nav-item">
         <% } %>
@@ -50,7 +50,5 @@
           <li class="nav-item"><a href="/login" class="nav-link">
             <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
         <% } %>
-
-        
     </div>
   </nav>
