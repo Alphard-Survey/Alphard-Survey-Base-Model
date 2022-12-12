@@ -230,6 +230,7 @@ body,
   }
 }
 .log_page{
+  position:relative;
   display: flex;
   justify-content: center;
 }
