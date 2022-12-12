@@ -229,7 +229,7 @@ body,
     padding: 0;
   }
 }
-.log_page{
+.container_log_page{
   position:relative;
   display: flex;
   justify-content: center;
