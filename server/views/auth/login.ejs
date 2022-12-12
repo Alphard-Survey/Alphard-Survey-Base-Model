@@ -10,17 +10,29 @@
     <div class="avatar">
       <img src="/public/Assets/images/Logo.png" />
     </div>
-    <h2>Login</h2>
-    <h3>Welcome back!</h3>
+    <h2 style="color:#dae0e5">Login</h2>
+    <h3 style="color:#dae0e5">Welcome back!</h3>
 
     <form class="login-form">
       <div class="textbox">
-        <input type="textbox" placeholder="Username" />
+        <input type="textbox"
+         placeholder="Enter Username"
+         class="form-control"
+         name="username"
+         id="username"
+         required
+         autofocus
+          />
       </div>
       <div class="textbox">
-        <input type="password" placeholder="Password" />
+        <input type="password"
+         placeholder="Enter Password"
+         class="form-control"
+         id="password"
+         required
+          />
       </div>
-      <button type="submit">LOGIN</button>
+      <input type="submit" class="btn btn-success" value="Login">
       <a href="/register">Register Here!</a>
     </form>
 </main>
