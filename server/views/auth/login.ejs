@@ -34,6 +34,9 @@
           />
           </div>
       <button type="submit">LOGIN</button>
+      <% if(messages.length > 0) {%>
+        <div class="alert alert-danger"> <%= messages %> </div>
+      <%} %>
       <a href="/register">Register Here!</a>
     </form>
 </main>
