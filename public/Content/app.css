@@ -328,7 +328,7 @@ body,
   color: #157ae1;
 }
 
-.input .btn {
+.login-form button {
   cursor: pointer;
   background: #157ae1;
   color: #f9f9f9;
@@ -337,7 +337,7 @@ body,
   letter-spacing: 2px;
 }
 
-.input .btn a{
+.login-form a {
   color: #157ae1;
   font-size: 16px;
   text-align: left;
