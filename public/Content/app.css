@@ -229,7 +229,7 @@ body,
     padding: 0;
   }
 }
-.log_page{
+.container_log_page{
   position:relative;
   display: flex;
   justify-content: center;
@@ -344,3 +344,13 @@ body,
   text-align: left;
   text-decoration: none;
 }
+.container_log_page {
+    margin-top: 30px;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
